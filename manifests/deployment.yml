@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "demok8-490e"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "demok8-490e"
+  template:
+    metadata:
+      labels:
+        app: "demok8-490e"
+    spec:
+      containers:
+        - name: "demok8-490e"
+          image: "jafardockerdemo.azurecr.io/demok8"
+          ports:
+          - containerPort: 8080
